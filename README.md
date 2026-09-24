@@ -8,20 +8,15 @@ Bu, [pixeldrain-bypass.gamedrive.org](https://pixeldrain-bypass.gamedrive.org/) 
 
 ### Kurulum
 
-İki Java dosyasını JDownloader'ın kendi jar'larına karşı derle. JDownloader Java 8 ile çalıştığı için çıktı da 8 olmalı.
+Hazır dosyayı kullanmak en kolayı. [Releases](https://github.com/StRonKEA/pixeldrain-bypass-for-jdownloader/releases) sayfasından zip'i indir. JDownloader'ı tamamen kapat. Zip'in içindeki `jd` klasörünü, JDownloader kurulumundaki `jd` klasörünün üzerine kopyala. İki dosya kendi yerine gider. Sonra JDownloader'ı aç. Açıkken kopyalanan dosyayı görmez.
+
+Kendin derlemek istersen kaynak buradadır. JDownloader Java 8 ile çalışır, çıktı da 8 olmalı.
 
 ```
 javac --release 8 -encoding UTF-8 -cp "Core.jar;JDownloader.jar;libs/*" -d out jd/plugins/hoster/PixeldrainBypass.java jd/plugins/decrypter/PixeldrainBypassCrawler.java
 ```
 
-`Core.jar`, `JDownloader.jar` ve `libs` klasörü JDownloader kurulumunun içinde.
-
-Çıkan sınıfları şuraya kopyala:
-
-- `PixeldrainBypass.class` → `jd/plugins/hoster/`
-- `PixeldrainBypassCrawler.class` → `jd/plugins/decrypter/`
-
-JDownloader açıksa tamamen kapat. Yeniden açınca eklentiyi görür. Açıkken kopyalanan sınıf yüklenmez.
+`Core.jar`, `JDownloader.jar` ve `libs` JDownloader kurulumunun içindedir. Çıkan `PixeldrainBypass.class` dosyasını `jd/plugins/hoster/` altına, `PixeldrainBypassCrawler.class` dosyasını `jd/plugins/decrypter/` altına koy. JDownloader kapalıyken kopyala, sonra aç.
 
 ### Kullanım
 
@@ -39,20 +34,15 @@ This is the JDownloader version of the userscript at [pixeldrain-bypass.gamedriv
 
 ### Install
 
-Compile the two Java files against JDownloader's own jars. JDownloader runs on Java 8, so the class files have to be 8 as well.
+The easy way is the ready-made zip on [Releases](https://github.com/StRonKEA/pixeldrain-bypass-for-jdownloader/releases). Quit JDownloader completely. Copy the `jd` folder from the zip onto the `jd` folder in your JDownloader install. The two files land in the right place. Start JDownloader again. It will not see files copied while it is still open.
+
+If you want to compile it yourself, the source is in this repo. JDownloader runs on Java 8, so the class files have to be 8 as well.
 
 ```
 javac --release 8 -encoding UTF-8 -cp "Core.jar;JDownloader.jar;libs/*" -d out jd/plugins/hoster/PixeldrainBypass.java jd/plugins/decrypter/PixeldrainBypassCrawler.java
 ```
 
-`Core.jar`, `JDownloader.jar` and the `libs` folder are inside the JDownloader install.
-
-Copy the classes here:
-
-- `PixeldrainBypass.class` → `jd/plugins/hoster/`
-- `PixeldrainBypassCrawler.class` → `jd/plugins/decrypter/`
-
-If JDownloader is open, quit it fully. It only picks up the classes on the next start.
+`Core.jar`, `JDownloader.jar` and `libs` are inside the JDownloader install. Put `PixeldrainBypass.class` in `jd/plugins/hoster/` and `PixeldrainBypassCrawler.class` in `jd/plugins/decrypter/`. Copy them while JDownloader is closed, then start it.
 
 ### Use
 
